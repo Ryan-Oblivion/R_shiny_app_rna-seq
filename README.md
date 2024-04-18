@@ -13,3 +13,16 @@ I will upload a renv.lock file that contains the dependencies used to run this a
 I saved the project's libraries using renv::snapshot(), and I can load it back using renv::restore(lockfile = 'renv.lock') and choose option 2.
 
 One other note is that I am using shinyuithemes from the github repository remotes and you can download it to rstudio with, remotes::install_github("rstudio/shinyuieditor").
+
+
+How to host the app on posit:
+# install.packages("rsconnect")
+library(rsconnect)
+
+# Set your Posit account
+rsconnect::setAccountInfo(name="<account_name>", 
+                          token="<account_token>", 
+                          secret="<account_secret>")
+
+# Deploy your app
+rsconnect::deployApp(appDir = "<path_to_your_app>")
