@@ -10,6 +10,6 @@ I will provide an example of an input file.
 
 
 I will upload a renv.lock file that contains the dependencies used to run this app using r shiny.
-I saved the project's libraries using renv::snapshot(), and I can load it back using renv::restore().
+I saved the project's libraries using renv::snapshot(), and I can load it back using renv::restore(lockfile = 'renv.lock') and choose option 2.
 
 One other note is that I am using shinyuithemes from the github repository remotes and you can download it to rstudio with, remotes::install_github("rstudio/shinyuieditor").
