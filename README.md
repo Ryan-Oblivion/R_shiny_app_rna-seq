@@ -15,14 +15,19 @@ I saved the project's libraries using renv::snapshot(), and I can load it back u
 One other note is that I am using shinyuithemes from the github repository remotes and you can download it to rstudio with, remotes::install_github("rstudio/shinyuieditor").
 
 
-How to host the app on posit:
-# install.packages("rsconnect")
+## How to host the app on posit:
+
+### Find this app using this url
+ 
+ https://barrns-genome.shinyapps.io/my_first_r_app/
+ 
+install.packages("rsconnect")
 library(rsconnect)
 
-# Set your Posit account
+### Set your Posit account
 rsconnect::setAccountInfo(name="<account_name>", 
                           token="<account_token>", 
                           secret="<account_secret>")
 
-# Deploy your app
+### Deploy your app
 rsconnect::deployApp(appDir = "<path_to_your_app>")
