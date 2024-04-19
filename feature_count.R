@@ -1,6 +1,6 @@
 
 
-
+library("apeglm")
 # checking for all required packages first
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
