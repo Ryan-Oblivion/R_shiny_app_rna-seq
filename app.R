@@ -35,10 +35,11 @@ ui <- fluidPage(
         width = 7
       ),
       
+      # this was imageOutput
       sidebarPanel(
         tags$h3("Volcano"),
         position = "Right",
-        imageOutput("volcanoPlot", height ="500px", width = "500px"),
+        plotOutput("volcanoPlot", height ="500px", width = "500px"),
         width = 10
         
       )
@@ -60,6 +61,8 @@ server <- function(input, output, session) {
   observeEvent(input$submit, {
     
     
+    #v_plot_padj <- source("feature_count.R")$value
+    
     
     output$contents <- renderPrint({
       req(input$Files)
@@ -69,6 +72,9 @@ server <- function(input, output, session) {
       file_names = input$Files$name
       print(file_names)
       
+      
+      
+      
       # here I want to get the file paths so I can use in the function
       #files = input$Files$datapath
       #result <- deseq2_analysis(files)
@@ -77,6 +83,8 @@ server <- function(input, output, session) {
       #head(df)
     })
     
+    
+    
     # here i want to make a reactive timer that will invalidate after the time specified
     # then i will remove the notification once that happens
     #observe({
@@ -84,11 +92,11 @@ server <- function(input, output, session) {
     #removeNotification(id)
     #})
     
-    output$volcanoPlot <- renderImage({
-      
-      list(src = "./v_plot_padj.png",
-           alt = "Volcano Plot showing Padj")},
-      deleteFile = FALSE)
+    #output$volcanoPlot <- renderImage({
+    #  
+    #  list(src = "./v_plot_padj.png",
+    #       alt = "Volcano Plot showing Padj")},
+    #  deleteFile = FALSE)
     
     # I want to show a notification when the "submit" button is clicked
     id <- showNotification("Currently conducting differential gene analysis. 
@@ -97,6 +105,11 @@ server <- function(input, output, session) {
     # here I want to get the file paths so I can use in the function
     files = input$Files$datapath
     result <- deseq2_analysis(files)
+    
+    output$volcanoPlot <- renderPlot({
+      # Loadnow the plot from the result of deseq2_analysis
+      print(result)
+    })
     
     # here I want to remove the notification only after the analysis is complete 
     on.exit(removeNotification(id))  

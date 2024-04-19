@@ -369,7 +369,7 @@ xlab = bquote(~Log[2] ~ "fold change"),
 ylab = bquote(~Log[10] ~ "Padj-value"),
 legendLabels = c("Not Signigicant", expression(Log[2] ~ FC), "padj passed", expression(p - adj ~ and ~ log[2] ~ FC ~ passed)))
 png(file = 'v_plot_padj_fc_relaxed.png', height = 1000, width = 1000)
-print(v_plot_padj)
+print(v_plot_padj_fc_relaxed)
 dev.off()
 
 # making a volcano plot with relaxed threshold of 0.1
