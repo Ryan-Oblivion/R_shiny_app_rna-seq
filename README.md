@@ -29,8 +29,11 @@ library(rsconnect)
 
 ## Raw Data Used
 This data was gathered from a study on HIV reactivation from latency. The two conditions consisted of control samples and knockout samples where the gene CCNT1 was knockedout.
+
 The study was published here: https://www.mdpi.com/1999-4915/15/9/1863 
+
 The raw data was gathered here: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA1005655&o=acc_s%3Aa
+
 You can find the raw data on 'GEO omnibus' website and use the accession number to get to the data location: GSE240899
 
 ### More about the data 
