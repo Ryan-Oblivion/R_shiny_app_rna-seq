@@ -26,6 +26,19 @@ One other note is that I am using shinyuithemes from the github repository remot
 install.packages("rsconnect")
 library(rsconnect)
 
+
+## Raw Data Used
+This data was gathered from a study on HIV reactivation from latency. The two conditions consisted of control samples and knockout samples where the gene CCNT1 was knockedout.
+The study was published here: https://www.mdpi.com/1999-4915/15/9/1863 
+The raw data was gathered here: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA1005655&o=acc_s%3Aa
+You can find the raw data on 'GEO omnibus' website and use the accession number to get to the data location: GSE240899
+
+### More about the data 
+You can find on my github a repository that has an RNA-seq pipeline I created that takes the fastq files (raw data) and processes it to create bam files, then using an extra step not done in this app, it takes the bam files and creates a quantification file for the amount of genes present in the samples that had reads align to a reference genome. This is where I was able to gather the input data for the app. 
+**Disclaimer** You cannot use fastq files as input for this app. Only use quantification files generated for Bulk RNA-seq analysis. 
+
+
+
 ### Set your Posit account
 rsconnect::setAccountInfo(name="<account_name>", 
                           token="<account_token>", 
