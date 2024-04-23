@@ -21,7 +21,7 @@ One other note is that I am using shinyuithemes from the github repository remot
  
  https://barrns-genome.shinyapps.io/my_first_r_app/
 
-##### If you are not familiar with rstudio and want a quick understanding of how the app works, please try it out using the link above. This will take you to posit which hosts rshiny apps users create. 
+##### If you are not familiar with rstudio and want a quick understanding of how the app works, please try it out using the link above. This will take you to shinyapps.io which hosts rshiny apps users create. 
  
 install.packages("rsconnect")
 library(rsconnect)
